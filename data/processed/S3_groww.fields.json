@@ -1,0 +1,19 @@
+{
+  "source_id": "S3_groww",
+  "scheme_id": "S3",
+  "authority": "mirror",
+  "is_complete": true,
+  "document_date": "2026-09-25",
+  "missing_facts": [],
+  "fields": {
+    "expense_ratio": "1.21",
+    "exit_load": "Nil",
+    "min_sip": "500",
+    "min_amount": "500",
+    "riskometer": "Moderately High",
+    "benchmark": "NIFTY 500 TRI",
+    "nav": "1,447.383",
+    "aum": "15,991.7823",
+    "lock_in": "3 years"
+  }
+}

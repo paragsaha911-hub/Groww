@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Scheme identity",
+    "level": 2,
+    "text": "## Scheme identity\nFund: HDFC Flexi Cap Direct Plan-Growth\nPlan: Direct Growth\nISIN: INF179K01UT0\nCategory: Flexi Cap\nAMC: HDFC Mutual Fund\nFund manager: Prashant Jain\nInception date: 01-Jan-2013\nRegistrar: CAMS",
+    "heading_path": "Scheme identity",
+    "char_start": 0,
+    "char_end": 212,
+    "page": null,
+    "ordinal": 0
+  },
+  {
+    "title": "Objective",
+    "level": 2,
+    "text": "## Objective\nThe scheme seeks to generate capital appreciation / income from a portfolio, predominantly invested in equity & equity related instruments.",
+    "heading_path": "Objective",
+    "char_start": 212,
+    "char_end": 365,
+    "page": null,
+    "ordinal": 1
+  },
+  {
+    "title": "Expense ratio",
+    "level": 2,
+    "text": "## Expense ratio\nExpense ratio: 0.77%",
+    "heading_path": "Expense ratio",
+    "char_start": 365,
+    "char_end": 403,
+    "page": null,
+    "ordinal": 2
+  },
+  {
+    "title": "Exit load",
+    "level": 2,
+    "text": "## Exit load\nExit load: Exit load of 1% if redeemed within 1 year",
+    "heading_path": "Exit load",
+    "char_start": 403,
+    "char_end": 469,
+    "page": null,
+    "ordinal": 3
+  },
+  {
+    "title": "Minimum investment",
+    "level": 2,
+    "text": "## Minimum investment\nMinimum SIP: Rs 100\nMinimum amount: Rs 100",
+    "heading_path": "Minimum investment",
+    "char_start": 469,
+    "char_end": 534,
+    "page": null,
+    "ordinal": 4
+  },
+  {
+    "title": "Benchmark",
+    "level": 2,
+    "text": "## Benchmark\nBenchmark: NIFTY 500 TRI\nBenchmark name: NIFTY 500 Total Return Index",
+    "heading_path": "Benchmark",
+    "char_start": 534,
+    "char_end": 617,
+    "page": null,
+    "ordinal": 6
+  },
+  {
+    "title": "Riskometer",
+    "level": 2,
+    "text": "## Riskometer\nRiskometer: Moderately High",
+    "heading_path": "Riskometer",
+    "char_start": 617,
+    "char_end": 659,
+    "page": null,
+    "ordinal": 7
+  },
+  {
+    "title": "NAV and AUM",
+    "level": 2,
+    "text": "## NAV and AUM\nNAV: 2,214.572\nNAV date: 25-Sep-2026\nAUM: 113,606.46602051 Cr",
+    "heading_path": "NAV and AUM",
+    "char_start": 659,
+    "char_end": 736,
+    "page": null,
+    "ordinal": 8
+  }
+]

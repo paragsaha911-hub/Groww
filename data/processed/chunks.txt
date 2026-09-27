@@ -1,0 +1,228 @@
+==============================================================================
+CHUNKS
+==============================================================================
+corpus_version: cv9acda551423c5c0e
+chunker: C3
+chunk_size: 500
+chunk_overlap: 100
+embed_model: sentence-transformers/all-MiniLM-L6-v2
+embed_dim: 384
+documents: 5
+chunks: 5
+
+==============================================================================
+[1] chunk_id     : S1_groww_c0001
+    source_id     : S1_groww
+    scheme_id     : S1
+    scheme_name   : HDFC Large Cap Fund
+    category      : Large Cap
+    section_title : Scheme identity
+    heading_path  : Scheme identity
+    ordinal       : 1
+    char_span     : 0-694
+    token_count   : 174
+    authority     : mirror
+    document_date : 2026-09-25
+    retrieved_at  : 2026-09-27T08:06:00.214373+00:00
+    corpus_version: cv9acda551423c5c0e
+    chars         : 694
+
+# HDFC Large Cap Fund (Direct Growth) - Groww scheme page
+
+- source_id: S1_groww
+- scheme_id: S1
+- url: https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth
+- authority: mirror
+- extraction_method: mirror
+- document_date: 2026-09-25
+- is_complete: True
+- tokens: 174
+## Scheme identity
+Fund: HDFC Large Cap Fund
+Plan: Direct Growth
+ISIN: INF179K01YV8
+Category: Large Cap
+AMC: HDFC Mutual Fund
+Fund manager: Prashant Jain
+Inception date: 01-Jan-2013
+Registrar: CAMS
+## Objective
+The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Large-Cap companies.
+## Expense ratio
+Expense ratio: 1.03%
+## Exit load
+Exit load: Exit load of 1% if redeeme
+
+==============================================================================
+[2] chunk_id     : S2_groww_c0001
+    source_id     : S2_groww
+    scheme_id     : S2
+    scheme_name   : HDFC Equity (Flexi Cap) Fund
+    category      : Flexi Cap
+    section_title : Scheme identity
+    heading_path  : Scheme identity
+    ordinal       : 1
+    char_span     : 0-736
+    token_count   : 184
+    authority     : mirror
+    document_date : 2026-09-25
+    retrieved_at  : 2026-09-27T08:06:43.437536+00:00
+    corpus_version: cv9acda551423c5c0e
+    chars         : 736
+
+# HDFC Equity (Flexi Cap) Fund (Direct Growth) - Groww scheme page
+
+- source_id: S2_groww
+- scheme_id: S2
+- url: https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth
+- authority: mirror
+- extraction_method: mirror
+- document_date: 2026-09-25
+- is_complete: True
+- tokens: 184
+## Scheme identity
+Fund: HDFC Flexi Cap Direct Plan-Growth
+Plan: Direct Growth
+ISIN: INF179K01UT0
+Category: Flexi Cap
+AMC: HDFC Mutual Fund
+Fund manager: Prashant Jain
+Inception date: 01-Jan-2013
+Registrar: CAMS
+## Objective
+The scheme seeks to generate capital appreciation / income from a portfolio, predominantly invested in equity & equity related instruments.
+## Expense ratio
+Expense ratio: 0.77%
+## Exit load
+Exit load: Exit load of 1% if redeem
+
+==============================================================================
+[3] chunk_id     : S3_groww_c0001
+    source_id     : S3_groww
+    scheme_id     : S3
+    scheme_name   : HDFC ELSS Tax Saver Fund
+    category      : ELSS / Tax
+    section_title : Scheme identity
+    heading_path  : Scheme identity
+    ordinal       : 1
+    char_span     : 0-726
+    token_count   : 182
+    authority     : mirror
+    document_date : 2026-09-25
+    retrieved_at  : 2026-09-27T08:07:26.451258+00:00
+    corpus_version: cv9acda551423c5c0e
+    chars         : 726
+
+# HDFC ELSS Tax Saver Fund (Direct Plan Growth) - Groww scheme page
+
+- source_id: S3_groww
+- scheme_id: S3
+- url: https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth
+- authority: mirror
+- extraction_method: mirror
+- document_date: 2026-09-25
+- is_complete: True
+- tokens: 182
+## Scheme identity
+Fund: HDFC ELSS - Tax Saver Fund
+Plan: Direct Growth
+ISIN: INF179K01YS4
+Category: ELSS
+AMC: HDFC Mutual Fund
+Fund manager: Vinay Kulkarni
+Inception date: 01-Jan-2013
+Registrar: CAMS
+## Objective
+The scheme seeks to generate capital appreciation / income from a portfolio, comprising predominantly of equity & equity related instruments.
+## Expense ratio
+Expense ratio: 1.21%
+## Exit load
+Exit load: Nil
+## Min
+
+==============================================================================
+[4] chunk_id     : S4_groww_c0001
+    source_id     : S4_groww
+    scheme_id     : S4
+    scheme_name   : HDFC Small Cap Fund
+    category      : Small Cap
+    section_title : Scheme identity
+    heading_path  : Scheme identity
+    ordinal       : 1
+    char_span     : 0-708
+    token_count   : 177
+    authority     : mirror
+    document_date : 2026-09-25
+    retrieved_at  : 2026-09-27T08:08:09.523470+00:00
+    corpus_version: cv9acda551423c5c0e
+    chars         : 707
+
+# HDFC Small Cap Fund (Direct Growth) - Groww scheme page
+
+- source_id: S4_groww
+- scheme_id: S4
+- url: https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth
+- authority: mirror
+- extraction_method: mirror
+- document_date: 2026-09-25
+- is_complete: True
+- tokens: 177
+## Scheme identity
+Fund: HDFC Small Cap Fund
+Plan: Direct Growth
+ISIN: INF179KA1RW5
+Category: Small Cap
+AMC: HDFC Mutual Fund
+Fund manager: Chirag Setalvad
+Inception date: 01-Jan-2013
+Registrar: CAMS
+## Objective
+The scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies.
+## Expense ratio
+Expense ratio: 0.78%
+## Exit load
+Exit load: Exit load of 1% if redeemed within 1
+
+==============================================================================
+[5] chunk_id     : S5_groww_c0001
+    source_id     : S5_groww
+    scheme_id     : S5
+    scheme_name   : HDFC Balanced Advantage Fund
+    category      : Balanced Advantage (Hybrid)
+    section_title : Scheme identity
+    heading_path  : Scheme identity
+    ordinal       : 1
+    char_span     : 0-830
+    token_count   : 208
+    authority     : mirror
+    document_date : 2026-09-25
+    retrieved_at  : 2026-09-27T08:08:52.820616+00:00
+    corpus_version: cv9acda551423c5c0e
+    chars         : 830
+
+# HDFC Balanced Advantage Fund (Direct Growth) - Groww scheme page
+
+- source_id: S5_groww
+- scheme_id: S5
+- url: https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth
+- authority: mirror
+- extraction_method: mirror
+- document_date: 2026-09-25
+- is_complete: True
+- tokens: 208
+## Scheme identity
+Fund: HDFC Balanced Advantage Fund
+Plan: Direct Growth
+ISIN: INF179K01WA6
+Category: Dynamic Asset Allocation
+AMC: HDFC Mutual Fund
+Fund manager: Srinivas Rao Ravuri
+Inception date: 01-Jan-2013
+Registrar: CAMS
+## Objective
+The Scheme seeks to provide long term capital appreciation / income from a dynamic mix of equity and debt investments.
+## Expense ratio
+Expense ratio: 0.78%
+## Exit load
+Exit load: Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.
+## Minim

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "G01",
+    "query": "What is the expense ratio of HDFC Large Cap Fund?",
+    "expected_scheme": "S1",
+    "expected_section": "Expense ratio",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "must_be_numeric": true,
+    "notes": "PRD 5.1 reference question 1. Official factsheet states Regular 1.56% / Direct 1.03%; the Direct value is the answer for a Direct Growth plan."
+  },
+  {
+    "id": "G02",
+    "query": "Is there an exit load on HDFC ELSS Tax Saver Fund?",
+    "expected_scheme": "S3",
+    "expected_section": "Exit load",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "must_be_numeric": false,
+    "notes": "PRD 5.1 reference question 2. Answer is Nil; the lock-in (G04) is the actual constraint. Do not invent a load."
+  },
+  {
+    "id": "G03",
+    "query": "What is the minimum SIP amount for HDFC Small Cap Fund?",
+    "expected_scheme": "S4",
+    "expected_section": "Minimum investment",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "must_be_numeric": true,
+    "notes": "PRD 5.1 reference question 3."
+  },
+  {
+    "id": "G04",
+    "query": "What is the lock-in period for the HDFC ELSS Tax Saver Fund?",
+    "expected_scheme": "S3",
+    "expected_section": "Lock-in period",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "must_be_numeric": true,
+    "notes": "PRD 5.1 reference question 4. 3 years. Only S3 has a Lock-in period section at all."
+  },
+  {
+    "id": "G05",
+    "query": "What is the riskometer level of HDFC Balanced Advantage Fund?",
+    "expected_scheme": "S5",
+    "expected_section": "Riskometer",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+    "must_be_numeric": false,
+    "notes": "PRD 5.1 reference question 5."
+  },
+  {
+    "id": "G06",
+    "query": "What is the benchmark of HDFC Equity (Flexi Cap) Fund?",
+    "expected_scheme": "S2",
+    "expected_section": "Benchmark",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "must_be_numeric": false,
+    "notes": "PRD 5.1 reference question 6. The factsheet renames this scheme HDFC Flexi Cap Fund; see config.SCHEME_NAME_ALIASES."
+  },
+  {
+    "id": "G07",
+    "query": "How do I download my capital gains statement?",
+    "expected_scheme": null,
+    "expected_section": null,
+    "expected_source_url": null,
+    "must_be_numeric": false,
+    "notes": "PRD 5.1 reference question 7. NO SOURCE COVERS THIS. It is an AMC portal/process question, not a scheme fact, and is out of the facts-only scope. Expected behaviour is a refusal or a redirect, never a fabricated answer. Deliberately unanswerable: it proves the abstention path works."
+  },
+  {
+    "id": "G08",
+    "query": "What is the exit load on HDFC Large Cap Fund?",
+    "expected_scheme": "S1",
+    "expected_section": "Exit load",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "must_be_numeric": true,
+    "notes": "1% if redeemed within 1 year. Guards against answering Nil as for the ELSS scheme."
+  },
+  {
+    "id": "G09",
+    "query": "What is the minimum amount to invest in HDFC ELSS Tax Saver Fund?",
+    "expected_scheme": "S3",
+    "expected_section": "Minimum investment",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "must_be_numeric": true,
+    "notes": "Rs 500 lump sum. S3 is the only scheme whose minimum differs from the others' Rs 100."
+  },
+  {
+    "id": "G10",
+    "query": "What is the benchmark of HDFC Small Cap Fund?",
+    "expected_scheme": "S4",
+    "expected_section": "Benchmark",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "must_be_numeric": false,
+    "notes": "NIFTY 250 TRI. Distinct from S1 NIFTY 100 TRI and S2 NIFTY 500 TRI."
+  },
+  {
+    "id": "G11",
+    "query": "What is the riskometer level of HDFC Large Cap Fund?",
+    "expected_scheme": "S1",
+    "expected_section": "Riskometer",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "must_be_numeric": false,
+    "notes": "Moderately High. The live source spells this two ways across schemes ('Moderately High' vs 'Moderately High Riskometer'); parse.normalise_riskometer must collapse both."
+  },
+  {
+    "id": "G12",
+    "query": "What is the expense ratio of HDFC Balanced Advantage Fund?",
+    "expected_scheme": "S5",
+    "expected_section": "Expense ratio",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+    "must_be_numeric": true,
+    "notes": "0.78%. Equal to S4 by coincidence, so this cannot distinguish the schemes on value alone; the section and scheme metadata must."
+  },
+  {
+    "id": "G13",
+    "query": "What is the minimum SIP for HDFC Large Cap Fund?",
+    "expected_scheme": "S1",
+    "expected_section": "Minimum investment",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "must_be_numeric": true,
+    "notes": "Rs 100. Four of five schemes share this value, so hit@5 alone is a weak signal here; section_precision matters."
+  },
+  {
+    "id": "G14",
+    "query": "Compare the expense ratio of HDFC Large Cap Fund and HDFC Small Cap Fund",
+    "expected_scheme": null,
+    "expected_section": "Expense ratio",
+    "expected_source_url": null,
+    "must_be_numeric": true,
+    "notes": "Cross-scheme comparison spanning S1 and S4. expected_scheme is null by design because the query names two schemes; scored on expected_section only, and excluded from hit@5/MRR so the denominator stays honest."
+  },
+  {
+    "id": "G15",
+    "query": "Which of these HDFC schemes has a lock-in period?",
+    "expected_scheme": "S3",
+    "expected_section": "Lock-in period",
+    "expected_source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "must_be_numeric": false,
+    "notes": "Cross-scheme comparison. Only the ELSS scheme has one, so the correct answer must come from the single Lock-in period section in the corpus rather than from any other scheme's page."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "source_id": "S5_groww",
+  "scheme_id": "S5",
+  "authority": "mirror",
+  "is_complete": true,
+  "document_date": "2026-09-25",
+  "missing_facts": [],
+  "fields": {
+    "expense_ratio": "0.78",
+    "exit_load": "Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.",
+    "min_sip": "100",
+    "min_amount": "100",
+    "riskometer": "Moderately High",
+    "benchmark": "NIFTY 50 Hybrid Composite Debt 50:50 Index",
+    "nav": "557.728",
+    "aum": "107,295.7919"
+  }
+}

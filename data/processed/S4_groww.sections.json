@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Scheme identity",
+    "level": 2,
+    "text": "## Scheme identity\nFund: HDFC Small Cap Fund\nPlan: Direct Growth\nISIN: INF179KA1RW5\nCategory: Small Cap\nAMC: HDFC Mutual Fund\nFund manager: Chirag Setalvad\nInception date: 01-Jan-2013\nRegistrar: CAMS",
+    "heading_path": "Scheme identity",
+    "char_start": 0,
+    "char_end": 200,
+    "page": null,
+    "ordinal": 0
+  },
+  {
+    "title": "Objective",
+    "level": 2,
+    "text": "## Objective\nThe scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies.",
+    "heading_path": "Objective",
+    "char_start": 200,
+    "char_end": 331,
+    "page": null,
+    "ordinal": 1
+  },
+  {
+    "title": "Expense ratio",
+    "level": 2,
+    "text": "## Expense ratio\nExpense ratio: 0.78%",
+    "heading_path": "Expense ratio",
+    "char_start": 331,
+    "char_end": 369,
+    "page": null,
+    "ordinal": 2
+  },
+  {
+    "title": "Exit load",
+    "level": 2,
+    "text": "## Exit load\nExit load: Exit load of 1% if redeemed within 1 year",
+    "heading_path": "Exit load",
+    "char_start": 369,
+    "char_end": 435,
+    "page": null,
+    "ordinal": 3
+  },
+  {
+    "title": "Minimum investment",
+    "level": 2,
+    "text": "## Minimum investment\nMinimum SIP: Rs 100\nMinimum amount: Rs 100",
+    "heading_path": "Minimum investment",
+    "char_start": 435,
+    "char_end": 500,
+    "page": null,
+    "ordinal": 4
+  },
+  {
+    "title": "Benchmark",
+    "level": 2,
+    "text": "## Benchmark\nBenchmark: BSE 250 SmallCap TRI\nBenchmark name: BSE 250 SmallCap Total Return Index",
+    "heading_path": "Benchmark",
+    "char_start": 500,
+    "char_end": 597,
+    "page": null,
+    "ordinal": 6
+  },
+  {
+    "title": "Riskometer",
+    "level": 2,
+    "text": "## Riskometer\nRiskometer: Moderately High",
+    "heading_path": "Riskometer",
+    "char_start": 597,
+    "char_end": 639,
+    "page": null,
+    "ordinal": 7
+  },
+  {
+    "title": "NAV and AUM",
+    "level": 2,
+    "text": "## NAV and AUM\nNAV: 159.82\nNAV date: 25-Sep-2026\nAUM: 41,890.8613 Cr",
+    "heading_path": "NAV and AUM",
+    "char_start": 639,
+    "char_end": 708,
+    "page": null,
+    "ordinal": 8
+  }
+]

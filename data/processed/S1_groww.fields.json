@@ -1,0 +1,18 @@
+{
+  "source_id": "S1_groww",
+  "scheme_id": "S1",
+  "authority": "mirror",
+  "is_complete": true,
+  "document_date": "2026-09-25",
+  "missing_facts": [],
+  "fields": {
+    "expense_ratio": "1.03",
+    "exit_load": "Exit load of 1% if redeemed within 1 year",
+    "min_sip": "100",
+    "min_amount": "100",
+    "riskometer": "Moderately High",
+    "benchmark": "NIFTY 100 TRI",
+    "nav": "1,189.079",
+    "aum": "39,933.3663"
+  }
+}
