@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Protocol, Sequence, runtime_checkable
 
 from app.generate.prompts import (
@@ -11,6 +12,23 @@ from app.generate.prompts import (
     split_sentences,
     tokenise,
 )
+
+_METADATA_LINE_RE = re.compile(
+    r"^\s*[-*]?\s*"
+    r"(source_id|scheme_id|url|authority|extraction_method|document_date"
+    r"|is_complete|tokens|retrieved_at|corpus_version)\s*:",
+    re.IGNORECASE,
+)
+_HEADING_LINE_RE = re.compile(r"^\s*#{1,6}\s+\S")
+
+
+def strip_document_noise(text: str) -> str:
+    kept = [
+        line
+        for line in (text or "").splitlines()
+        if line.strip() and not _METADATA_LINE_RE.match(line) and not _HEADING_LINE_RE.match(line)
+    ]
+    return "\n".join(kept)
 
 
 @runtime_checkable
@@ -56,7 +74,7 @@ class ExtractiveAnswerer:
         parsed: ParsedPrompt = parse_user_prompt(user)
         if not parsed.blocks:
             return NOT_FOUND
-        best_text = parsed.blocks[0]["text"]
+        best_text = strip_document_noise(parsed.blocks[0]["text"])
         chosen = select_sentences(best_text, parsed.query, self.max_sentences)
         if not chosen:
             return NOT_FOUND
@@ -67,7 +85,7 @@ class ExtractiveAnswerer:
         return f"{body}\nSOURCE_ID: {source_id}" if source_id else body
 
     def answer_from(self, text: str, query: str, source_id: str = "") -> str:
-        chosen = select_sentences(text, query, self.max_sentences)
+        chosen = select_sentences(strip_document_noise(text), query, self.max_sentences)
         if not chosen:
             return NOT_FOUND
         body = " ".join(chosen)

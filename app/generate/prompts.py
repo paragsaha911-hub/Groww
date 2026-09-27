@@ -120,6 +120,15 @@ def count_sentences(text: str) -> int:
     return len(split_sentences(text))
 
 
+def strip_source_markers(text: str) -> str:
+    cleaned = _SOURCE_BLOCK_RE.sub("", text or "")
+    cleaned = _SOURCE_ID_LINE_RE.sub("", cleaned)
+    cleaned = _SOURCE_ID_RE.sub("", cleaned)
+    cleaned = cleaned.replace(SOURCE_OPEN, "").replace(SOURCE_CLOSE, "")
+    lines = [line.rstrip() for line in cleaned.splitlines()]
+    return "\n".join(lines).strip()
+
+
 def is_not_found(answer: str) -> bool:
     stripped = (answer or "").strip()
     if not stripped:

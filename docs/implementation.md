@@ -334,12 +334,12 @@ Expect: 0 advice probes classified `factual`. This is a **release-blocking** num
 
 **Exit criteria**
 
-- [ ] All 6 intents implemented with the fixed evaluation order
-- [ ] 0 of 20+ advice probes reach `factual`
-- [ ] 0 of 15+ performance probes reach `factual`
-- [ ] All 7 PRD §5.1 reference questions classify `factual`/`comparative_factual`
-- [ ] `out_of_scope` is an allowlist, not a blocklist
-- [ ] `RULES` exported for test introspection
+- [x] All 6 intents implemented with the fixed evaluation order
+- [x] 0 of 20+ advice probes reach `factual`
+- [x] 0 of 15+ performance probes reach `factual`
+- [x] All 7 PRD §5.1 reference questions classify `factual`/`comparative_factual`
+- [x] `out_of_scope` is an allowlist, not a blocklist
+- [x] `RULES` exported for test introspection
 
 ---
 
@@ -847,7 +847,7 @@ duplicates).
 
 ```bash
 pytest tests/test_retriever.py -q
-python -m scripts.query "expense ratio of HDFC Large Cap Fund" --debug
+python -m scripts.retrieve "expense ratio of HDFC Large Cap Fund" --debug
 ```
 
 Expect: ranked chunks with all scores, correct scheme first, `passed_floor=True`.
@@ -861,7 +861,7 @@ Expect: ranked chunks with all scores, correct scheme first, `passed_floor=True`
 - [x] Below-floor query returns zero chunks and `passed_floor=False`
 - [x] Cross-encoder optional and silently skipped
 - [x] All six score fields retained on every candidate
-- [x] `python -m scripts.query ... --debug` prints the ranked table
+- [x] `python -m scripts.retrieve ... --debug` prints the ranked table
 
 ---
 
@@ -1026,14 +1026,14 @@ Expect: answer + link + freshness; refusal with no retrieval; PII refusal. Then 
 
 **Exit criteria**
 
-- [ ] PII path: no retrieval, no LLM call, no raw query persisted
-- [ ] `advice`/`performance`/`out_of_scope`: no retrieval, no LLM call
-- [ ] Below-floor → `not_found`
-- [ ] `ExtractiveAnswerer` auto-selected when key absent or `offline=True`
-- [ ] `freshness_date` from cited chunks only
-- [ ] Trace written on every path with PRD §15.2 key order
-- [ ] **`grep`-level check: no PII fixture value in `traces.jsonl` or any log**
-- [ ] All three surfaces call only `answer_question()`
+- [x] PII path: no retrieval, no LLM call, no raw query persisted
+- [x] `advice`/`performance`/`out_of_scope`: no retrieval, no LLM call
+- [x] Below-floor → `not_found`
+- [x] `ExtractiveAnswerer` auto-selected when key absent or `offline=True`
+- [x] `freshness_date` from cited chunks only
+- [x] Trace written on every path with PRD §15.2 key order
+- [x] **`grep`-level check: no PII fixture value in `traces.jsonl` or any log**
+- [x] All three surfaces call only `answer_question()`
 
 ---
 
@@ -1088,14 +1088,14 @@ the answer. Exercise all four behaviours: factual, refusal, PII, mirror-labelled
 
 **Exit criteria**
 
-- [ ] Both surfaces call only `answer_question()`
-- [ ] Welcome line + 3 example questions + "Facts-only. No investment advice." present
-- [ ] Full disclaimer in footer
-- [ ] Refusal visually distinct without relying on colour
-- [ ] Mirror-grounded answer shows the secondary-source label
-- [ ] Debug mode shows scores; default view does not
-- [ ] Streamlit index cached with `@st.cache_resource`
-- [ ] Offline toggle wired to `answer_question(offline=...)`
+- [x] Both surfaces call only `answer_question()`
+- [x] Welcome line + 3 example questions + "Facts-only. No investment advice." present
+- [x] Full disclaimer in footer
+- [x] Refusal visually distinct without relying on colour
+- [x] Mirror-grounded answer shows the secondary-source label
+- [x] Debug mode shows scores; default view does not
+- [x] Streamlit index cached with `@st.cache_resource`
+- [x] Offline toggle wired to `answer_question(offline=...)`
 
 ---
 

@@ -559,11 +559,11 @@ def test_real_chroma_store_scheme_filter(tmp_path: Any) -> None:
     assert {item.chunk.scheme_id for item in result.chunks} == {"S2"}
 
 
-def test_query_cli_json_output(retriever: HybridRetriever, monkeypatch: Any, capsys: Any) -> None:
-    from scripts import query as query_module
+def test_retrieve_cli_json_output(retriever: HybridRetriever, monkeypatch: Any, capsys: Any) -> None:
+    from scripts import retrieve as retrieve_module
 
-    monkeypatch.setattr(query_module, "HybridRetriever", lambda *a, **k: retriever)
-    exit_code = query_module.main(
+    monkeypatch.setattr(retrieve_module, "HybridRetriever", lambda *a, **k: retriever)
+    exit_code = retrieve_module.main(
         ["expense ratio of HDFC Large Cap Fund", "--json", "--debug"]
     )
     assert exit_code == 0
@@ -573,9 +573,9 @@ def test_query_cli_json_output(retriever: HybridRetriever, monkeypatch: Any, cap
     assert '"cosine_similarity"' in payload
 
 
-def test_query_cli_reports_floor_failure(retriever: HybridRetriever, monkeypatch: Any) -> None:
-    from scripts import query as query_module
+def test_retrieve_cli_reports_floor_failure(retriever: HybridRetriever, monkeypatch: Any) -> None:
+    from scripts import retrieve as retrieve_module
 
-    monkeypatch.setattr(query_module, "HybridRetriever", lambda *a, **k: retriever)
-    exit_code = query_module.main(["quantum chromodynamics lattice gauge theory"])
+    monkeypatch.setattr(retrieve_module, "HybridRetriever", lambda *a, **k: retriever)
+    exit_code = retrieve_module.main(["quantum chromodynamics lattice gauge theory"])
     assert exit_code == 1
