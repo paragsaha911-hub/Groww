@@ -58,7 +58,8 @@ class Embedder:
             return []
         model = self._load()
         embeddings = model.embed(list(texts))
-        return [list(vector) for vector in embeddings]
+        # Convert each np.float32 to native Python float for ChromaDB compatibility
+        return [[float(val) for val in vector] for vector in embeddings]
 
     def embed_documents(self, texts: Sequence[str]) -> list[list[float]]:
         return self.encode(texts)  # type: ignore
@@ -66,7 +67,8 @@ class Embedder:
     def embed_query(self, text: str) -> list[float]:
         model = self._load()
         embeddings = list(model.embed([text or ""]))
-        return list(embeddings[0])
+        # Convert np.float32 to native Python float for ChromaDB compatibility
+        return [float(val) for val in embeddings[0]]
 
 
 class MiniLMEmbedder(Embedder):
