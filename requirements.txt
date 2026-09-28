@@ -1,5 +1,5 @@
 chromadb>=0.5.20
-sentence-transformers>=3.0.1
+fastembed>=0.3.6
 numpy>=1.26.0
 beautifulsoup4>=4.12.3
 lxml>=5.2.2
