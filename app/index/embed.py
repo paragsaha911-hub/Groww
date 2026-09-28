@@ -30,9 +30,15 @@ class Embedder:
         self,
         model_name: str = "BAAI/bge-small-en-v1.5",
         cache_dir: Path | str | None = None,
+        *args: Any,
+        **kwargs: Any,
     ) -> None:
         self.model_name = model_name
         self.cache_dir = Path(cache_dir) if cache_dir else config.MODELS_DIR
+        self.corpus_version = kwargs.get("corpus_version")
+        self.model_id = kwargs.get("model_id", DEFAULT_MODEL_ID)
+        self.dim = kwargs.get("dim", DEFAULT_EMBED_DIM)
+        self.kwargs = kwargs
         self._model: Any = None
 
     def _load(self) -> Any:
@@ -64,13 +70,15 @@ class Embedder:
 
 
 class MiniLMEmbedder(Embedder):
-    """Drop-in lightweight FastEmbed implementation satisfying legacy MiniLMEmbedder imports."""
+    """Drop-in lightweight FastEmbed implementation accepting all legacy parameters."""
     def __init__(
         self,
         model_name: str = "BAAI/bge-small-en-v1.5",
         cache_dir: Path | str | None = None,
+        *args: Any,
+        **kwargs: Any,
     ) -> None:
-        super().__init__(model_name=model_name, cache_dir=cache_dir)
+        super().__init__(model_name=model_name, cache_dir=cache_dir, *args, **kwargs)
 
 
 _default_embedder: Embedder | None = None
