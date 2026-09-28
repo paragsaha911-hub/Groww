@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import os
 import re
 from pathlib import Path
 from typing import Any, Sequence
@@ -132,18 +133,27 @@ def detect_cross_encoder(
     candidates: Sequence[str] = CROSS_ENCODER_CANDIDATES,
     cache_dir: Path | None = None,
 ) -> str | None:
-    from app.index.embed import local_snapshot
+    if os.getenv("DISABLE_CROSS_ENCODER", "true").lower() in ("1", "true", "yes"):
+        return None
 
-    cache_dir = Path(cache_dir) if cache_dir else config.MODELS_DIR
-    for model_id in candidates:
-        if local_snapshot(model_id, cache_dir) is not None:
-            return model_id
+    try:
+        from app.index.embed import local_snapshot
+
+        cache_dir = Path(cache_dir) if cache_dir else config.MODELS_DIR
+        for model_id in candidates:
+            if local_snapshot(model_id, cache_dir) is not None:
+                return model_id
+    except Exception:
+        return None
     return None
 
 
 class CrossEncoderReranker:
     def __init__(self, model_id: str | None = None, cache_dir: Path | None = None) -> None:
-        self.model_id = model_id or detect_cross_encoder(cache_dir=cache_dir)
+        if os.getenv("DISABLE_CROSS_ENCODER", "true").lower() in ("1", "true", "yes"):
+            self.model_id = None
+        else:
+            self.model_id = model_id or detect_cross_encoder(cache_dir=cache_dir)
         self._model: Any = None
 
     @property
@@ -151,6 +161,8 @@ class CrossEncoderReranker:
         return self.model_id is not None
 
     def _load(self) -> Any:
+        if not self.available:
+            return None
         if self._model is None:
             from sentence_transformers import CrossEncoder
 
@@ -162,6 +174,8 @@ class CrossEncoderReranker:
             return None
         try:
             model = self._load()
+            if model is None:
+                return None
             pairs = [(query, chunk.text) for chunk in chunks]
             raw = model.predict(pairs)
         except Exception:
