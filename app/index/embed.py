@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import os
 from pathlib import Path
 from typing import Any, Sequence
@@ -25,10 +26,17 @@ def local_snapshot(model_id: str, cache_dir: Path | str | None = None) -> Path |
     return None
 
 
+def _l2_normalize(vector: list[float]) -> list[float]:
+    norm = math.sqrt(sum(val * val for val in vector))
+    if norm == 0:
+        return vector
+    return [val / norm for val in vector]
+
+
 class Embedder:
     def __init__(
         self,
-        model_name: str = DEFAULT_MODEL_ID,
+        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
         cache_dir: Path | str | None = None,
         *args: Any,
         **kwargs: Any,
@@ -45,7 +53,6 @@ class Embedder:
         if self._model is None:
             from fastembed import TextEmbedding
 
-            # Use exact same model as the pre-computed index
             self._model = TextEmbedding(
                 model_name=self.model_name,
                 cache_dir=str(self.cache_dir) if self.cache_dir else None,
@@ -59,7 +66,7 @@ class Embedder:
             return []
         model = self._load()
         embeddings = model.embed(list(texts))
-        return [[float(val) for val in vector] for vector in embeddings]
+        return [_l2_normalize([float(val) for val in vector]) for vector in embeddings]
 
     def embed_documents(self, texts: Sequence[str]) -> list[list[float]]:
         return self.encode(texts)  # type: ignore
@@ -67,13 +74,13 @@ class Embedder:
     def embed_query(self, text: str) -> list[float]:
         model = self._load()
         embeddings = list(model.embed([text or ""]))
-        return [float(val) for val in embeddings[0]]
+        return _l2_normalize([float(val) for val in embeddings[0]])
 
 
 class MiniLMEmbedder(Embedder):
     def __init__(
         self,
-        model_name: str = DEFAULT_MODEL_ID,
+        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
         cache_dir: Path | str | None = None,
         *args: Any,
         **kwargs: Any,
