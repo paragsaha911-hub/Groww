@@ -39,7 +39,6 @@ class Embedder:
         if self._model is None:
             from fastembed import TextEmbedding
 
-            # FastEmbed uses ONNX CPU runtime directly (no PyTorch, ~100MB RAM)
             self._model = TextEmbedding(
                 model_name=self.model_name,
                 cache_dir=str(self.cache_dir) if self.cache_dir else None,
@@ -62,6 +61,16 @@ class Embedder:
         model = self._load()
         embeddings = list(model.embed([text or ""]))
         return list(embeddings[0])
+
+
+class MiniLMEmbedder(Embedder):
+    """Drop-in lightweight FastEmbed implementation satisfying legacy MiniLMEmbedder imports."""
+    def __init__(
+        self,
+        model_name: str = "BAAI/bge-small-en-v1.5",
+        cache_dir: Path | str | None = None,
+    ) -> None:
+        super().__init__(model_name=model_name, cache_dir=cache_dir)
 
 
 _default_embedder: Embedder | None = None
